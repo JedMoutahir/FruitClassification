@@ -24,16 +24,17 @@ img_array = np.expand_dims(img_array, axis=0)
 
 # Make the prediction using the loaded model
 prediction = model.predict(img_array)
-
+print(prediction)
 # Get the fruit label from the prediction
 label_map = {
     0: 'apple',
     1: 'banana',
-    2: 'corn',
-    3: 'kiwi',
-    4: 'lemon',
-    5: 'strawberry'
+    2: 'kiwi',
+    3: 'not a fruit',
+    4: 'orange',
+    5: 'tomato'
 }
+
 predicted_label = label_map[np.argmax(prediction)]
 
 # Output the predicted fruit label
